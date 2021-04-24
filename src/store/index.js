@@ -8,7 +8,8 @@ export default new Vuex.Store({
     planets: [
       {
         id: 1,
-        name: 'earth'
+        'name': 'earth',
+        img: 'earth.jpg'
       },
       {
         id: 2,
