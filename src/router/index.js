@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Planets from '../views/Planets.vue'
+import Planet from '../components/Planet.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,12 @@ const routes = [
     name: 'Planets',
     component: Planets
   },
+  {
+    path: '/planet/:id',
+    name: 'Planet',
+    component: Planet,
+    props: true
+  }
 ]
 
 const router = new VueRouter({

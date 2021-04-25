@@ -1,5 +1,9 @@
 <template>
   <div class="planets">
+    <!-- <div v-for="pagePlanet in getPlanets" :key="pagePlanet.id" :planetData="planet">
+      <router-link :to="'/planet/' + pagePlanet.id">{{pagePlanet.name}}</router-link>
+    </div> -->
+    <Navbar/>
     <div class="planets__left">
       <Planet v-for="planet in getPlanets" :key="planet.id" :planetData="planet"/>
     </div>  
@@ -12,13 +16,15 @@
 <script>
 import Planet from '@/components/Planet.vue';
 import Earth from '@/components/Earth.vue';
+import Navbar from '@/components/Navbar.vue';
 import {mapGetters} from 'vuex';
 
 export default {
   name: 'Planets',
   components:{
     Planet,
-    Earth
+    Earth,
+    Navbar
   },
   computed: {
     ...mapGetters(['getPlanets'])

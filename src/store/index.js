@@ -16,11 +16,11 @@ export default new Vuex.Store({
         name: 'mars'
       },
       {
-        id: 1,
+        id: 3,
         name: 'sun'
       },
       {
-        id: 1,
+        id: 4,
         name: 'jupiter'
       }
     ]
@@ -32,7 +32,8 @@ export default new Vuex.Store({
   getters: {
     getPlanets(state){
       return state.planets;
-    }
+    },
+    getPlanetsById: (state) => (id) => state.planets.find((planet) => planet.id === id)
   },
   modules: {
   }
