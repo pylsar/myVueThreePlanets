@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <ul v-for="pagePlanet in getPlanets" :key="pagePlanet.id" :planetData="planet">
+    <ul v-for="pagePlanet in getPlanets" :key="pagePlanet.id" :planetData="getPlanets">
       <li><router-link :to="'/planet/' + pagePlanet.id">{{pagePlanet.name}}</router-link></li>
     </ul>
   </nav>

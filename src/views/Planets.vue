@@ -1,11 +1,8 @@
 <template>
   <div class="planets">
-    <!-- <div v-for="pagePlanet in getPlanets" :key="pagePlanet.id" :planetData="planet">
-      <router-link :to="'/planet/' + pagePlanet.id">{{pagePlanet.name}}</router-link>
-    </div> -->
     <Navbar/>
     <div class="planets__left">
-      <Planet v-for="planet in getPlanets" :key="planet.id" :planetData="planet"/>
+      <Planet v-for="planet in getPlanetsById" :key="planet.id"/>
     </div>  
     <div class="planets__right">
       <Earth/>
@@ -27,11 +24,11 @@ export default {
     Navbar
   },
   computed: {
-    ...mapGetters(['getPlanets'])
+    ...mapGetters(['getPlanetsById'])
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .planets{
   display: flex;
   justify-content: space-between;
