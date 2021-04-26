@@ -1,11 +1,11 @@
 <template>
-  <div class="earth">
+  <div class="mars">
   </div>
 </template>
 <script>
 import * as THREE from "three";
 export default{
-  name: 'Earth',
+  name: 'Mars',
   mounted(){
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -14,7 +14,7 @@ export default{
       0.5,
       1000
     );
-    camera.position.z = 200;
+    camera.position.z = 500;
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth /2, window.innerHeight/2); 
     this.$el.appendChild(renderer.domElement);

@@ -7,17 +7,18 @@
             <button @click="$router.go(-1)">к списку</button> 
         </div>
         <div class="planet__right">
-            <Earth />
+            <Mars />
         </div>
     </div>
 </template>
 <script>
 import {mapGetters} from 'vuex'
-import Earth from '@/components/Earth.vue';
+import Mars from './Mars.vue';
+
 export default{
     name: 'Planet',
     components:{
-        Earth
+        Mars
     },
     data() {
         return {
