@@ -6,6 +6,7 @@
     </div>  
     <div class="planets__right">
       <Earth/>
+      <Mars/>
     </div>  
   </div>
 </template>
@@ -13,6 +14,7 @@
 <script>
 import Planet from '@/components/Planet.vue';
 import Earth from '@/components/Earth.vue';
+import Mars from '@/components/Mars.vue';
 import Navbar from '@/components/Navbar.vue';
 import {mapGetters} from 'vuex';
 
@@ -21,6 +23,7 @@ export default {
   components:{
     Planet,
     Earth,
+    Mars,
     Navbar
   },
   computed: {

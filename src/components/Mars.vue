@@ -14,25 +14,26 @@ export default{
       0.5,
       1000
     );
-    camera.position.z = 500;
+    camera.position.z = 400;
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth /2, window.innerHeight/2); 
     this.$el.appendChild(renderer.domElement);
 
     //Earth
-    const geometry = new THREE.SphereGeometry(100, 40, 40);
+    const geometry = new THREE.SphereGeometry(250, 40, 40);
     const material = new THREE.MeshBasicMaterial({
       map: new THREE.TextureLoader().load('earth.jpg')
     });
     const earth = new THREE.Mesh(geometry, material);
 
     scene.add(earth);
-    animate();
     function animate() {
       requestAnimationFrame(animate);
       earth.rotation.y -= .01;
       renderer.render(scene, camera);
     }
+    animate();
+
   }
 }
 </script>
