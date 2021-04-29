@@ -8,14 +8,14 @@
         </div>
         <div class="planet__right">
             <Mars />
-            <Earth />
+            <Earth/>
         </div>
     </div>
 </template>
 <script>
 import {mapGetters} from 'vuex'
 import Mars from '@/components/Mars.vue';
-import Earth from './Earth.vue';
+import Earth from '@/components/Earth.vue';
 
 export default{
     name: 'Planet',

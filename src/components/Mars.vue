@@ -16,20 +16,20 @@ export default{
     );
     camera.position.z = 400;
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth /2, window.innerHeight/2); 
+    renderer.setSize(window.innerWidth /2, window.innerHeight/2);
     this.$el.appendChild(renderer.domElement);
 
-    //Earth
-    const geometry = new THREE.SphereGeometry(250, 40, 40);
+    //Mars
+    const geometry = new THREE.SphereGeometry(100, 40, 40);
     const material = new THREE.MeshBasicMaterial({
-      map: new THREE.TextureLoader().load('earth.jpg')
+      map: new THREE.TextureLoader().load('mars.jpg')
     });
-    const earth = new THREE.Mesh(geometry, material);
+    const mars = new THREE.Mesh(geometry, material);
 
-    scene.add(earth);
+    scene.add(mars);
     function animate() {
       requestAnimationFrame(animate);
-      earth.rotation.y -= .01;
+      mars.rotation.y -= .01;
       renderer.render(scene, camera);
     }
     animate();
