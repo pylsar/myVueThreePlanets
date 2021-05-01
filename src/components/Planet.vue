@@ -12,8 +12,11 @@
         <div class="planet__right" v-else-if="id == 2">
             <Mars />
         </div>
+        <div class="planet__right" v-else-if="id == 3">
+            <Sun />
+        </div>
         <div class="planet__right" v-else-if="id == 4">
-            <Mars />
+            <Jupiter />
         </div>
     </div>
 </template>
@@ -21,12 +24,16 @@
 import {mapGetters} from 'vuex';
 import Earth from '@/components/Earth.vue';
 import Mars from '@/components/Mars.vue';
+import Sun from '@/components/Sun.vue';
+import Jupiter from '@/components/Jupiter.vue';
 
 export default{
     name: 'Planet',
     components:{
         Earth,
         Mars,
+        Sun,
+        Jupiter
     },
     data() {
         return {

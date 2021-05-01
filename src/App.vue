@@ -12,5 +12,7 @@
 #app{
   padding-left: 20px;
   padding-right: 20px;
+  color: white;
+  background: black;
 }
 </style>

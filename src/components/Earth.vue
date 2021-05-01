@@ -33,7 +33,7 @@ export default{
       //Earth
       const geometry = new THREE.SphereGeometry(100, 40, 40);
       const material = new THREE.MeshBasicMaterial({
-        map: new THREE.TextureLoader().load('earth.jpg')
+        map: new THREE.TextureLoader().load('/earth.jpg')
       });
       this.earth = new THREE.Mesh(geometry, material);
 
@@ -41,15 +41,13 @@ export default{
     },
     animate: function(){
       requestAnimationFrame(this.animate);
-      this.earth.rotation.y -= .01;
+      this.earth.rotation.y -= .005;
       this.renderer.render(this.scene, this.camera);
     }
   },
   mounted(){
     this.init();
-    
     this.animate();
-    
   }
 }
 </script>

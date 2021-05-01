@@ -1,22 +1,22 @@
 <template>
-  <div class="mars">
+  <div class="sun">
   </div>
 </template>
 <script>
 import * as THREE from "three";
 export default{
-  name: 'Mars',
+  name: 'Sun',
    data(){
     return{
       camera: null,
       scene: null,
       renderer: null,
-      mars: null
+      sun: null
     }
   },
   methods:{
     init: function(){
-      const marsDiv = document.querySelector('.mars');
+      const sunDiv = document.querySelector('.sun');
       this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera(
         75,
@@ -27,21 +27,21 @@ export default{
       this.camera.position.z = 200;
       this.renderer = new THREE.WebGLRenderer();
       this.renderer.setSize(window.innerWidth /2, window.innerHeight/2);
-      marsDiv.appendChild(this.renderer.domElement);
+      sunDiv.appendChild(this.renderer.domElement);
 
-      //mars
+      //sun
       const geometry = new THREE.SphereGeometry(100, 40, 40);
       const material = new THREE.MeshBasicMaterial({
-        map: new THREE.TextureLoader().load('/mars.jpg')
+        map: new THREE.TextureLoader().load('/sun.jpg')
       });
-      this.mars = new THREE.Mesh(geometry, material);
+      this.sun = new THREE.Mesh(geometry, material);
 
-      this.scene.add(this.mars);
+      this.scene.add(this.sun);
     },
 
     animate: function(){
       requestAnimationFrame(this.animate);
-      this.mars.rotation.y -= .005;
+      this.sun.rotation.y -= .005;
       this.renderer.render(this.scene, this.camera);
     }
   },
