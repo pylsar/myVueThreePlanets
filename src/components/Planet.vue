@@ -8,20 +8,17 @@
         </div>
         <div class="planet__right">
             <Mars />
-            <Earth/>
         </div>
     </div>
 </template>
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters} from 'vuex';
 import Mars from '@/components/Mars.vue';
-import Earth from '@/components/Earth.vue';
 
 export default{
     name: 'Planet',
     components:{
         Mars,
-        Earth
     },
     data() {
         return {
@@ -39,7 +36,8 @@ export default{
         $route(toRoute){
             this.id = toRoute.params.id
         }
-    }
+    },
+    
 }
 </script>
 <style lang="scss">

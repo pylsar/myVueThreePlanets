@@ -22,7 +22,7 @@ export default{
     //Mars
     const geometry = new THREE.SphereGeometry(100, 40, 40);
     const material = new THREE.MeshBasicMaterial({
-      map: new THREE.TextureLoader().load('mars.jpg')
+      map: new THREE.TextureLoader().load('/mars.jpg')
     });
     const mars = new THREE.Mesh(geometry, material);
 
