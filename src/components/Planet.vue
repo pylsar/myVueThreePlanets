@@ -6,18 +6,26 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ullam labore. Magni excepturi consequatur minima veritatis est ducimus esse ex sapiente debitis nihil, cum facere sed quae vero. Cupiditate, doloremque!</p> 
             <button @click="$router.go(-1)">к списку</button> 
         </div>
-        <div class="planet__right">
+        <div class="planet__right" v-if="id == 1">
+            <Earth/>
+        </div>
+        <div class="planet__right" v-else-if="id == 2">
+            <Mars />
+        </div>
+        <div class="planet__right" v-else-if="id == 4">
             <Mars />
         </div>
     </div>
 </template>
 <script>
 import {mapGetters} from 'vuex';
+import Earth from '@/components/Earth.vue';
 import Mars from '@/components/Mars.vue';
 
 export default{
     name: 'Planet',
     components:{
+        Earth,
         Mars,
     },
     data() {
