@@ -9,6 +9,10 @@
   margin: 0;
   padding: 0;
 }
+body{
+  overflow: hidden;
+
+}
 #app{
   padding-left: 20px;
   padding-right: 20px;

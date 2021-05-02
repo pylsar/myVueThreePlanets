@@ -4,24 +4,22 @@
     <div class="planets__left">
       <Planet v-for="planet in getPlanetsById" :key="planet.id"/>
     </div>  
-    <div class="planets__right">
-      <Earth/>
-    </div>  
+    <Stars/>
   </div>
 </template>
 
 <script>
 import Planet from '@/components/Planet.vue';
-import Earth from '@/components/Earth.vue';
 import Navbar from '@/components/Navbar.vue';
+import Stars from '@/components/Stars.vue';
 import {mapGetters} from 'vuex';
 
 export default {
   name: 'Planets',
   components:{
     Planet,
-    Earth,
-    Navbar
+    Navbar,
+    Stars
   },
   computed: {
     ...mapGetters(['getPlanetsById'])
@@ -30,13 +28,11 @@ export default {
 </script>
 <style lang="scss" >
 .planets{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100vh;
-  &__left{
-    width: 40%;
-  }
+  background-image: url('../assets/img/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>
