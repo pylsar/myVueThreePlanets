@@ -8,14 +8,13 @@
 *{
   margin: 0;
   padding: 0;
+  list-style: none;
+  box-sizing: border-box;
 }
 body{
   overflow: hidden;
-
 }
 #app{
-  padding-left: 20px;
-  padding-right: 20px;
   color: white;
   background: black;
 }
