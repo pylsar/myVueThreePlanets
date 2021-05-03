@@ -3,7 +3,10 @@
         <div class="planet__left">
             <h1>{{planet.name}}</h1>
             <span>{{id}}</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ullam labore. Magni excepturi consequatur minima veritatis est ducimus esse ex sapiente debitis nihil, cum facere sed quae vero. Cupiditate, doloremque!</p> 
+            <p>{{planet.desc}}</p> 
+            <ul>
+                <li>Объем: {{planet.volume}}</li>
+            </ul>
             <button @click="$router.go(-1)">к списку</button> 
         </div>
         <div class="planet__right" v-if="id == 1">
