@@ -3,7 +3,7 @@
         <div class="planet__left">
             <h1 class="planet__title">{{planet.name}}</h1>
             <span>{{id}}</span>
-            <p>{{planet.desc}}</p> 
+            <p class="planet__description js-splitme">{{planet.desc}}</p> 
             <ul>
                 <li class="planet__data">Объем: {{planet.volume}} км<sup>3</sup></li>
                 <li class="planet__data">Маса: {{planet.weight}} кг</li>
@@ -27,6 +27,8 @@
 <script>
 import {mapGetters} from 'vuex';
 import { TimelineMax } from "gsap/all";
+import Splitter from 'split-html-to-chars';
+
 import Earth from '@/components/Earth.vue';
 import Mars from '@/components/Mars.vue';
 import Sun from '@/components/Sun.vue';
@@ -59,12 +61,18 @@ export default{
     },
     methods: {
         anim: function(){
-            let tl = new TimelineMax();
+            const tl = new TimelineMax();
+            let els = document.querySelectorAll(".js-splitme");
+            [].forEach.call(els, function(el) {
+                // outerHTML, thats *important*, no direct text nodes should be in parsed HTML
+                el.outerHTML = Splitter(el.outerHTML, '<span class="letter">$</span>');
+            });
             tl
             .fromTo(".planet__title", 1, { y: -1000 }, { y: 0 })
+            .staggerFromTo('.letter', .2, {opacity:0}, {opacity:1}, .05)
             .fromTo(".planet__data:first-child", .5, { opacity: 0}, { opacity: 1 })
             .fromTo(".planet__data:nth-child(2)", .5, { opacity: 0 }, { opacity: 1 });
-        }
+        },
     },
     mounted(){
         this.anim();
