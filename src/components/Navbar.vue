@@ -30,7 +30,7 @@ export default{
     width: 100%;
     & li{
       & a{
-        font-size: 100px;
+        font-size: 80px;
         color: transparent;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: #fff;
