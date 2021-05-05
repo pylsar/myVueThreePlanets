@@ -69,7 +69,7 @@ export default{
             });
             tl
             .fromTo(".planet__title", 1, { y: -1000 }, { y: 0 })
-            .staggerFromTo('.letter', .2, {opacity:0}, {opacity:1}, .05)
+            .staggerFromTo('.letter', .2, {opacity:0}, {opacity:1}, .03)
             .fromTo(".planet__data:first-child", .5, { opacity: 0}, { opacity: 1 })
             .fromTo(".planet__data:nth-child(2)", .5, { opacity: 0 }, { opacity: 1 });
         },
@@ -89,6 +89,7 @@ export default{
     height: 100vh;   
     &__left{
         width: 40%;
+        padding-left: 20px;
     }
     &__title{
         font-size: 34px;

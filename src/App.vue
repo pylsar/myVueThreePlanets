@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition name="page">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -17,5 +19,13 @@ body{
 #app{
   color: white;
   background: black;
+}
+.page-enter-active, .page-leave-active{
+  transition: all .5s ease;
+  opacity: 0;
+}
+.page-enter, .page-leave-to{
+  transition: all .5s ease;
+  opacity: 0;
 }
 </style>
