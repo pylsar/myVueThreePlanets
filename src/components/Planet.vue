@@ -2,13 +2,16 @@
     <div class="planet" >
         <div class="planet__left">
             <h1 class="planet__title">{{planet.name}}</h1>
-            <span>{{id}}</span>
             <p class="planet__description js-splitme">{{planet.desc}}</p> 
             <ul>
                 <li class="planet__data">Объем: {{planet.volume}} км<sup>3</sup></li>
-                <li class="planet__data">Маса: {{planet.weight}} кг</li>
+                <li class="planet__data">Масcа: {{planet.weight}} кг</li>
             </ul>
-            <button @click="$router.go(-1)">к списку</button> 
+            <button 
+                @click="$router.go(-1)"
+                class="planet__button"
+            >
+            к списку</button> 
         </div>
         <div class="planet__right" v-if="id == 1">
             <Earth/>
@@ -89,11 +92,36 @@ export default{
     height: 100vh;   
     &__left{
         width: 40%;
-        padding-left: 20px;
+        padding-left: 40px;
+        & p{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        & ul{
+            & li{
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+        }
     }
     &__title{
         font-size: 34px;
         text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &__button{
+        background: transparent;
+        padding: 5px 10px;
+        font-size: 30px;
+        color: #fff;
+        outline: none;
+        border: 1px solid #fff;
+        cursor: pointer;
+        &:hover{
+            background: #fff;
+            color: #000;
+        }
     }
 }
 
