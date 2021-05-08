@@ -5,7 +5,9 @@
         <router-link :to="'/planet/' + pagePlanet.id">{{pagePlanet.name}}</router-link>
       </li>
     </ul>
+    <router-link to="/grafics" class="navbar__grafics">Grafics</router-link>
   </nav>
+  
 </template>
 <script>
 import {mapGetters} from 'vuex';
@@ -41,6 +43,13 @@ export default{
         }
       }
     }
+  }
+  &__grafics{
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="earth" id="earth3D" @mousemove="move">
+  <div  id="earth3D" @mousemove="move">
   </div>
 </template>
 <script>
@@ -41,7 +41,7 @@ export default{
 
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setPixelRatio(window.devicePixelRatio);
-        this.renderer.setSize(window.innerWidth /2, window.innerHeight/2); 
+        this.renderer.setSize(window.innerWidth, window.innerHeight); 
         earthDiv.appendChild(this.renderer.domElement);
 
         this.scene.add(this.group);
@@ -56,7 +56,7 @@ export default{
       requestAnimationFrame(this.animate);
         this.render();
     },
-    move(){
+    move(event){
         this.group.rotation.y += event.movementX / 100;
         this.group.rotation.x += event.movementY / 100;
     }
@@ -68,5 +68,8 @@ export default{
 }
 </script>
 <style>
- 
+#earth3D{
+    width: 50%;
+    height: 50%;
+}
 </style>

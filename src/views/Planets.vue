@@ -5,7 +5,6 @@
       <Planet v-for="planet in getPlanetsById" :key="planet.id"/>
     </div>  
     <Stars/>
-    <Earth3D/>
   </div>
 </template>
 
@@ -13,7 +12,6 @@
 import Planet from '@/components/Planet.vue';
 import Navbar from '@/components/Navbar.vue';
 import Stars from '@/components/Stars.vue';
-import Earth3D from '@/components/Earth3D.vue';
 import {mapGetters} from 'vuex';
 
 export default {
@@ -22,7 +20,6 @@ export default {
     Planet,
     Navbar,
     Stars,
-    Earth3D
   },
   computed: {
     ...mapGetters(['getPlanetsById'])

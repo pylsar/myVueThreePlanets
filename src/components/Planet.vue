@@ -14,7 +14,7 @@
             к списку</button> 
         </div>
         <div class="planet__right" v-if="id == 1">
-            <Earth/>
+            <Earth />
         </div>
         <div class="planet__right" v-else-if="id == 2">
             <Mars />

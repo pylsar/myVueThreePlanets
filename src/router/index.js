@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Planets from '../views/Planets.vue'
 import Planet from '../components/Planet.vue'
+import Grafics from '../views/Grafics.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,12 @@ const routes = [
     name: 'Planet',
     component: Planet,
     props: true
-  }
+  },
+  {
+    path: '/grafics',
+    name: 'Grafics',
+    component: Grafics
+  },
 ]
 
 const router = new VueRouter({
