@@ -1,19 +1,19 @@
 <template>
     <div class="grafic">
-        <!-- <Earth3D/> -->
+        <Earth3D/>
         <div class="grafic__chart">
-            <chart-volume />
+            <chart-weight />
         </div>
     </div>
 </template>
 <script>
-// import Earth3D from '@/components/Earth3D';
-import ChartVolume from '../components/ChartVolume.vue';
+import Earth3D from '@/components/Earth3D';
+import ChartWeight from '../components/ChartWeight.vue';
 export default{
     name: 'Grafics',
     components: {
-        // Earth3D,
-        ChartVolume
+        Earth3D,
+        ChartWeight
     }
 }
 </script>
@@ -22,7 +22,7 @@ export default{
     position: relative;
     &__chart{
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
     }
 }

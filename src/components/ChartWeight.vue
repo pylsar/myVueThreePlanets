@@ -1,0 +1,49 @@
+<template>
+  <div class="chart-weight">
+    <svg :width="width" :height="height">
+      <g>
+        <rect
+          v-for="(chart, index) in getPlanets"
+          :key="index"
+          :fill="chart.fill"
+          :x="(index * width) / getPlanets.length"
+          :y="height - chart.weightCof"
+          :height="chart.weightCof"
+          :width="width / getPlanets.length"
+          >
+        </rect>
+            <text x="0" y="50" font-family="Verdana" font-size="35" fill="white">
+          Масса
+        </text>
+      </g>  
+    </svg>
+  </div>
+</template>
+<script>
+import {mapGetters} from 'vuex';
+export default {
+  name: "ChartWeight",
+  data() {
+    return {
+      width: 300,
+      height: 300,
+    };
+  },
+  computed:{
+      ...mapGetters(['getPlanets'])
+  }
+};
+</script>
+<style lang="scss">
+.chart-weight {
+  & svg {
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    // padding-left: 20px;
+    // padding-right: 20px;
+    & rect{
+      transition: all 5s ease;
+    }
+  }
+}
+</style>
