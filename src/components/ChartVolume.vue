@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-weight">
+  <div class="chart-volume">
     <svg :width="width" :height="height">
       <g>
         <rect
@@ -7,14 +7,13 @@
           :key="index"
           :fill="chart.fill"
           :x="(index * width) / getPlanets.length"
-          :y="height - chart.weightCof"
-          :height="chart.weightCof"
+          :y="height - chart.volumeCof"
+          :height="chart.volumeCof"
           :width="width / getPlanets.length"
-          class="chart-weight__rect"
           >
         </rect>
-            <text x="10" y="50" font-family="Verdana" font-size="35" fill="white">
-          Масса
+            <text x="100" y="50" font-family="Verdana" font-size="35" fill="white">
+          Плотность
         </text>
       </g>  
     </svg>
@@ -23,7 +22,7 @@
 <script>
 import {mapGetters} from 'vuex';
 export default {
-  name: "ChartWeight",
+  name: "ChartVolume",
   data() {
     return {
       width: 300,
@@ -36,9 +35,9 @@ export default {
 };
 </script>
 <style lang="scss">
-.chart-weight {
-  & svg{
-    border-left: 1px solid white;
+.chart-volume {
+  & svg {
+    border-right: 1px solid white;
     border-bottom: 1px solid white;
     & rect{
       transition: all 5s ease;

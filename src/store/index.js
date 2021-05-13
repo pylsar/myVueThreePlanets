@@ -13,6 +13,7 @@ export default new Vuex.Store({
         volume: '10,8321⋅1011',
         weight: '5,97×1024',
         weightCof: 100,
+        volumeCof: 100,
         fill: 'blue',
       },
       {
@@ -22,6 +23,7 @@ export default new Vuex.Store({
         volume: '1,6318⋅1011',
         weight: '1,9891·1030',
         weightCof: 120,
+        volumeCof: 30,
         fill: 'red',
       },
       {
@@ -31,6 +33,7 @@ export default new Vuex.Store({
         volume: '	1,40927⋅1011',
         weight: '6,42×1023',
         weightCof: 230,
+        volumeCof: 50,
         fill: 'yellow',
       },
       {
@@ -40,6 +43,7 @@ export default new Vuex.Store({
         volume: '1,43128⋅1015',
         weight: '1,8986⋅1027',
         weightCof: 150,
+        volumeCof: 210,
         fill: 'brown',
       }
     ]
