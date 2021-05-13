@@ -10,7 +10,6 @@
           :y="height - chart.weightCof"
           :height="chart.weightCof"
           :width="width / getPlanets.length"
-          class="chart-weight__rect"
           >
         </rect>
             <text x="10" y="50" font-family="Verdana" font-size="35" fill="white">
