@@ -14,7 +14,7 @@ export default new Vuex.Store({
         weight: '5,97×1024',
         weightCof: 100,
         volumeCof: 100,
-        fill: 'blue',
+        fill: 'skyblue',
       },
       {
         id: 2,

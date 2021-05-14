@@ -50,6 +50,13 @@ export default{
     left: 50%;
     transform: translateX(-50%);
     font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    transition: letter-spacing 1s ease;
+    &:hover{
+      letter-spacing: 30px;
+      transition: letter-spacing 1s ease;
+    }
   }
 }
 </style>

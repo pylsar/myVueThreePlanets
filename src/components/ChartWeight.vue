@@ -10,9 +10,10 @@
           :y="height - chart.weightCof"
           :height="chart.weightCof"
           :width="width / getPlanets.length"
+          class="chart-weight__rect"
           >
         </rect>
-            <text x="10" y="50" font-family="Verdana" font-size="35" fill="white">
+        <text x="10" y="50" font-family="Verdana" font-size="35" fill="white">
           Масса
         </text>
       </g>  
@@ -21,6 +22,7 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
+import { TimelineMax } from "gsap/all";
 export default {
   name: "ChartWeight",
   data() {
@@ -31,6 +33,17 @@ export default {
   },
   computed:{
       ...mapGetters(['getPlanets'])
+  },
+  methods:{
+    animationChart(){
+      const tl = new TimelineMax();
+      
+      tl
+      .from(".chart-weight__rect",2,{y:200})
+    }
+  },
+  mounted(){
+    this.animationChart();
   }
 };
 </script>
@@ -39,9 +52,6 @@ export default {
   & svg{
     border-left: 1px solid white;
     border-bottom: 1px solid white;
-    & rect{
-      transition: all 5s ease;
-    }
   }
 }
 </style>

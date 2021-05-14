@@ -10,9 +10,10 @@
           :y="height - chart.volumeCof"
           :height="chart.volumeCof"
           :width="width / getPlanets.length"
+          class="chart-volume__rect"
           >
         </rect>
-            <text x="100" y="50" font-family="Verdana" font-size="35" fill="white">
+        <text x="100" y="50" font-family="Verdana" font-size="35" fill="white">
           Плотность
         </text>
       </g>  
@@ -21,6 +22,7 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
+import { TimelineMax } from "gsap/all";
 export default {
   name: "ChartVolume",
   data() {
@@ -31,6 +33,17 @@ export default {
   },
   computed:{
       ...mapGetters(['getPlanets'])
+  },
+  methods:{
+    animationVolume(){
+      const tl = new TimelineMax();
+      
+      tl
+      .from(".chart-volume__rect",2,{y:500})
+    }
+  },
+  mounted(){
+    this.animationVolume();
   }
 };
 </script>
