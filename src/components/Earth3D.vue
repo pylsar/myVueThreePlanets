@@ -69,7 +69,7 @@ export default{
 </script>
 <style>
 #earth3D{
-    width: 50%;
-    height: 50%;
+  width: 50%;
+  height: 50%;
 }
 </style>
