@@ -33,17 +33,17 @@ export default{
     &__weight{
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 20px;
     }
     &__volume{
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 20px;
     }
     &__legend{
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 20px;
+        left: 20px;
         right: 0;
     }
 }
